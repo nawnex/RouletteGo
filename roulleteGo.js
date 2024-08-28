@@ -50,9 +50,8 @@ async function betComplete() {
   await timeout(5000)
   let payout = await payoutCalc(finalResult);
 
-  depositingPayment(payout, finalResult, balanceRemove)
-
   casinoStaff(payout, finalResult, balanceRemove)
+  depositingPayment(payout, finalResult, balanceRemove)
 }
 
 function casinoStaff(payout, finalResult, balanceRemove) {
