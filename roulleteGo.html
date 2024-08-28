@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Roullete Go</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="roulleteGo.css">
+  <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+
+  <meta property="title" content="RouletteGo - A fun roulette gambling game with a twist">
+  <meta name="description" content="A roulette game with a twist. A hidden device you've created to get extra payout from wins. Can you use this device to beat the odds?">
+  <meta name="keywords" content="roulette, betting, gambling, fake balance, gambling game,">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="clashInsight | tracking stats for CoC">
+  <meta property="og:description" content="A roulette game with a twist. A hidden device you've created to get extra payout from wins. Can you use this device to beat the odds?">
+  <meta property="og:image" content="">
+  <link rel="icon" type="image/x-icon" href="images/wheel.png">
+</head>
+<body>
+  <div class="efficiencyBarHolder">
+    <div class="gameWindow">
+      <div class="gameTitle">
+        <h1>Roulette Go</h1>
+      </div>
+      <div class="boxSets1">
+        <div class="box1">
+          <div id="chatbox"></div>
+        </div>
+        <div style="min-width:120px;">
+          <p class="account" class="account">Balance:</p>
+          <p id="balance" class="account">25</p>
+          <p class="account">Betting total:</p>
+          <p id="activeBet" class="account">0</p>
+        </div>
+      </div>
+      <div class="tableRail">
+        <div class="fullTable">
+          <div class="tableRow1">
+            <div class="secondRoulette">
+            <div class="wheelRotation">
+              <div id="main" class="main">
+                <div class="wheel-indicator"><svg viewBox="0 0 24 24"><path d="M15.383 8.076a1 1 0 0 0-1.09.217l-6 6A1 1 0 0 0 9 16h6a1 1 0 0 0 1-1V9a1 1 0 0 0-.617-.924z" style="fill:black" data-name="wheel-indicator"/></svg>
+                </div>
+                <div id="wheel" class="wheel">
+                  <div>
+                    <span class="rouletteSpanNumber span1"><p>0</p></span>
+                    <span class="rouletteSpanNumber span2"><p>1</p></span>
+                    <span class="rouletteSpanNumber span3"><p>2</p></span>
+                    <span class="rouletteSpanNumber span4"><p>3</p></span>
+                    <span class="rouletteSpanNumber span5"><p>4</p></span>
+              
+                    <span class="rouletteSpanNumber span6"><p>5</p></span>
+                    <span class="rouletteSpanNumber span7"><p>6</p></span>
+                    <span class="rouletteSpanNumber span8"><p>7</p></span>
+                    <span class="rouletteSpanNumber span9"><p>8</p></span>
+                    <span class="rouletteSpanNumber span10"><p>9</p></span>
+                    <span class="rouletteSpanNumber span11"><p>10</p></span>
+                    <span class="rouletteSpanNumber span12"><p>11</p></span>
+                    <span class="rouletteSpanNumber span13"><p>12</p></span>
+                  </div>
+                  <div class="circle-holder">
+                    <svg viewBox="0 0 100 100" style="z-index: 100;" id="wheel-circle">
+                      <circle cx="50" cy="50" r="48" stroke="silver" stroke-width="2" fill="rgba(0, 0, 0, 0.5)" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="rouletteBets">
+              <div class="rouletteBetTable">
+                <div class="betOutline">
+                  <div class="betTopGap"></div>
+                  <button class="buttonReset maxResolution" onclick="placingBet('tableId_17')"><div id="tableId_17" class="betWhiteOutline betTop">1 to 1</div></button>
+                  <button class="buttonReset maxResolution" onclick="placingBet('tableId_18')"><div id="tableId_18"class="betWhiteOutline betTop">2 to 1</div></button>
+                  <button class="buttonReset maxResolution" onclick="placingBet('tableId_19')"><div id="tableId_19" class="betWhiteOutline betTop">3 to 1</div></button>
+                  <div class="betTopGap"></div>
+                </div>
+                <div class="betMidGroup">
+                  <div class="betOutline betColumnLine betLeftPadding">
+                    <div></div>
+                    <button class="buttonReset maxResolution" onclick="placingBet('tableId_20')"><div id="tableId_20" class="betWhiteOutline">1st 3</div></button>
+                    <button class="buttonReset maxResolution" onclick="placingBet('tableId_21')"><div id="tableId_21" class="betWhiteOutline">2nd 3</div></button>
+                    <button class="buttonReset maxResolution" onclick="placingBet('tableId_22')"><div id="tableId_22" class="betWhiteOutline">3rd 3</div></button>
+                    <button class="buttonReset maxResolution" onclick="placingBet('tableId_23')"><div id="tableId_23" class="betWhiteOutline">4th 3</div></button>
+                    <div></div>
+                  </div>
+                  <div class="betNumbers">
+                    <button class="buttonReset" onclick="placingBet('tableId_1')"><div id="tableId_1" class="betCell red">1</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_2')"><div id="tableId_2" class="betCell black">2</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_3')"><div id="tableId_3" class="betCell red">3</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_4')"><div id="tableId_4" class="betCell black">4</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_5')"><div id="tableId_5" class="betCell red">5</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_6')"><div id="tableId_6" class="betCell black">6</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_7')"><div id="tableId_7" class="betCell red">7</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_8')"><div id="tableId_8" class="betCell black">8</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_9')"><div id="tableId_9" class="betCell red">9</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_10')"><div id="tableId_10" class="betCell black">10</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_11')"><div id="tableId_11" class="betCell red">11</div></button>
+                    <button class="buttonReset" onclick="placingBet('tableId_12')"><div id="tableId_12" class="betCell black">12</div></button>
+                  </div>
+                  <div class="betOutline betColumnLine betRightPadding">
+                    <div></div>
+                    <button class="buttonReset maxResolution" onclick="placingBet('tableId_15')"><div id="tableId_15" class="betWhiteOutline">1 - 6</div></button>
+                    <button class="buttonReset maxResolution" onclick="placingBet('tableId_16')"><div id="tableId_16" class="betWhiteOutline">7 - 12</div></button>
+                    <div></div>
+                  </div>
+                </div>
+                <div class="betOutline">
+                  <div class="betTopGap"></div>
+                  <button class="buttonReset maxResolution" onclick="placingBet('tableId_14')"><div id="tableId_14" class="betWhiteOutline betBottom"><span class="whiteDiamond"></span><span class="diamondColours redColor"></span></div></button>
+                  <button class="buttonReset maxResolution" onclick="placingBet('tableId_0')"><div id="tableId_0" class="betWhiteOutline betBottom">0</div></button>
+                  <button class="buttonReset maxResolution" onclick="placingBet('tableId_13')"><div id="tableId_13" class="betWhiteOutline betBottom"><span class="whiteDiamond"></span><span class="diamondColours blackColor"></span></div></button>
+                  <div class="betTopGap"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tableRow2">
+            <div class="tableBox">
+              <div class="chipOptions">
+                <button class="buttonReset" onclick="chipSelection(1)"><div class="chipHolder"><span id="oneChipSelect" style="height:80%;" class="rouletteChips oneChip">1</span></div></button>
+                <button class="buttonReset" onclick="chipSelection(5)"><div class="chipHolder"><span id="fiveChipSelect" class="rouletteChips fiveChip">5</span></div></button>
+                <button class="buttonReset" onclick="chipSelection(10)"><div class="chipHolder"><span id="tenChipSelect" class="rouletteChips tenChip">10</span></div></button>
+                <button class="buttonReset" onclick="chipSelection(100)"><div class="chipHolder"><span id="hundredChipSelect" class="rouletteChips hundredChip">100</span></div></button>
+              </div>
+            </div>
+            <div class="tableBox">
+              <button onclick="tableWipe()" style="height:50px;">wipe table</button>
+              <button class="spin" onclick="betComplete()">SPIN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="IntroducionSpeech"><p>"STEP RIGHT UP, DAREDEVILS AND DREAMERS!** This isn't just roulette—it's a revolutionary spin! Our one-of-a-kind algorithm might just flip the script on your payout. Come try your chances!"
+
+        You take a seat, but inside, your heart races. They think you're just another player, but you've been playing the long game. Every loss, every spin, all leading to this moment. Your secret device—a genius invention—tracks the hidden payout multipliers. This is it. The ultimate trial. Will your contraption make you the king of the wheel, or is Lady Luck ready to toy with you again?
+        I really hope I can get some <button class="buttonReset" onclick="freeCoins()">freeCoins</button> somehow!
+      </p></div>
+    </div>
+    <div class="efficiencyBar">
+      <div class="wave"></div>
+      <div class="waterBar"></div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript" src="roulleteGo.js"></script>
+</html>

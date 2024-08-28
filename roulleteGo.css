@@ -1,0 +1,583 @@
+body {
+  background-color: #002d558a;
+  color:white;
+  display: flex;
+  justify-content: center;
+}
+
+.efficiencyBarHolder {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  max-width: 1500px;
+}
+
+.gameWindow {
+  width: 100%;
+  font-family: Inter;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/*progress bar:*/
+
+.efficiencyBar {
+  background-color: #1a1919;
+  border-radius: 7px;
+  height:80vh;
+  width: 23%;
+  max-width: 80px;
+  min-width: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.wave {
+  background-color: #3f68c5;
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  border-radius: 38%;
+  right: -40px;
+  aspect-ratio: 1 / 1;
+  transform: rotate(360deg);
+  transition: all 5s ease;
+  animation: wave 30s ease-out infinite alternate;
+}
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(3600deg); }
+}
+
+.waterBar {
+  background-color: #3f68c5;
+  position: absolute;
+  width: 100%;
+  height:20%;
+  bottom: 0;
+  transition: all 5s ease;
+}
+
+/*game window*/
+
+.gameTitle {
+  background-color: #1a1919;
+  width: 100%;
+  color: #3F767C;
+  border-radius: 7px;
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+.gameTitle h1 {
+  margin: 0;
+}
+
+.boxSets1 {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  gap: 5px;
+}
+
+.box1 {
+  width: 100%;
+  max-width: 300px;
+  min-width: 210px;
+  height: 200px;
+  background-color: #1a1919;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+#chatbox {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.message {
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.message:last-child {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.system-message {
+  background-color: #fff3cd;
+  color: #856404;
+  font-weight: bold;
+}
+
+/* balance*/
+
+.account {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+/*roullete bet table*/
+
+.rouletteBets {
+  max-width: 500px;
+  min-width: 325px;
+  height: auto;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.rouletteBetTable {
+  display: flex;
+  flex-direction: column;
+  background-color: green;
+}
+
+.betOutline {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  gap: 5px;
+}
+
+.betTopGap {
+  min-width: 50px;
+  background-color: green;
+  padding-left: 5px;
+}
+
+.betWhiteOutline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: green;
+  flex: 1;
+  box-sizing: border-box;
+  min-width: 50px;
+  border-right: 2px solid black;
+  border-top: 2px solid black
+}
+
+.betTop {
+  margin-top: 5px;
+  min-width: 55px;
+  min-height: 40px;
+}
+
+.betMidGroup {
+  display: flex;
+}
+
+.betColumnLine {
+  flex-direction: column;
+}
+
+.betLeftPadding {
+  padding-left: 5px;
+}
+
+.betNumbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  background-color: white;
+  width: 100%;
+  border: 5px solid white;
+}
+
+.betCell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  aspect-ratio: 1 / 1;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  min-width: 55px;
+  box-sizing: border-box;
+}
+
+.redColor {
+  background-color: red;
+}
+
+.blackColor {
+  background-color: black;
+}
+.whiteDiamond {
+  clip-path: polygon(50% 95%, 90% 50%, 50% 5%, 10% 50%);
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+}
+.diamondColours {
+  clip-path: polygon(50% 90%, 85% 50%, 50% 10%, 15% 50%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.betRightPadding {
+  padding-right: 5px;
+}
+
+.betCell.red {
+  background-color: #e63946;
+}
+
+.betCell.black {
+  background-color: #1a1919;
+}
+
+.betCell.green {
+  background-color: #2a9d8f;
+}
+
+.betBottomPadding {
+  padding-bottom: 5px;
+}
+
+.betBottom {
+  margin-bottom: 5px;
+  min-width: 55px;
+  height: 40px;
+  position: relative;
+}
+
+.tableRail {
+  outline: 20px solid saddlebrown;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.fullTable {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: green;
+  border-radius: 17px;
+  border-top: 8px solid black;
+  border-right: 8px solid black;
+  overflow: hidden;
+}
+
+/*second roulette wheel*/
+.secondRoulette {
+  width: 200px;
+  background-color: green;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+@media (min-width: 880px) {
+  .wheelRotation {
+    margin-top: 300px;
+  }
+}
+@media (max-width: 880px) {
+  .wheelRotation {
+    margin-top: 5vh;
+  }
+}
+.wheelRotation {
+  transform: rotate(180deg);
+  height: 200px;
+}
+.main {
+  position: relative;
+  aspect-ratio: 1/1;
+  height: 230%;
+}
+
+.wheel-indicator {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  position: relative; 
+  border-radius: 50%;
+  border: 10px solid #F3c620;
+  overflow: hidden;
+  transition: all ease 4s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.circle-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+#wheel-circle {
+  width: 70%
+}
+
+.roulleteWheelNumbers {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Define the clip-path for each span */
+.span1 {
+  clip-path: polygon(50% 50%, calc(56% + 50% * cos(0deg)) calc(50% + 50% * sin(0deg)), calc(50% + 50% * cos(27.69deg)) calc(50% + 50% * sin(27.69deg)));
+  background-color: green; 
+  width: 100%;
+  height: 100%;
+}
+
+.span2 {
+  clip-path: polygon(50% 50%, calc(56% + 50% * cos(27.69deg)) calc(53% + 50% * sin(27.69deg)), calc(50% + 50% * cos(55.38deg)) calc(50% + 50% * sin(55.38deg)));
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}
+
+.span3 {
+  clip-path: polygon(50% 50%, calc(53% + 50% * cos(55.38deg)) calc(54% + 50% * sin(55.38deg)), calc(50% + 50% * cos(83.08deg)) calc(50% + 50% * sin(83.08deg)));
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.span4 {
+  clip-path: polygon(50% 50%, calc(51% + 50% * cos(83.08deg)) calc(57% + 50% * sin(83.08deg)), calc(50% + 50% * cos(110.77deg)) calc(50% + 50% * sin(110.77deg)));
+  background-color: red; 
+  width: 100%;
+  height: 100%;
+}
+
+.span5 {
+  clip-path: polygon(50% 50%, calc(48% + 50% * cos(110.77deg)) calc(55% + 50% * sin(110.77deg)), calc(50% + 50% * cos(138.46deg)) calc(50% + 50% * sin(138.46deg)));
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.span6 {
+  clip-path: polygon(50% 50%, calc(40% + 50% * cos(138.46deg)) calc(59% + 50% * sin(138.46deg)), calc(50% + 50% * cos(166.15deg)) calc(50% + 50% * sin(166.15deg)));
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}
+
+.span7 {
+  clip-path: polygon(50% 50%, calc(42% + 50% * cos(166.15deg)) calc(52% + 50% * sin(166.15deg)), calc(50% + 50% * cos(193.85deg)) calc(50% + 50% * sin(193.85deg)));
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.span8 {
+  clip-path: polygon(50% 50%, calc(42% + 50% * cos(193.85deg)) calc(48% + 50% * sin(193.85deg)), calc(50% + 50% * cos(221.54deg)) calc(50% + 50% * sin(221.54deg)));
+  background-color: red;
+  width: 100%;
+  height: 100%;
+} 
+
+.span9 {
+  clip-path: polygon(50% 50%, calc(43% + 50% * cos(221.54deg)) calc(44% + 50% * sin(221.54deg)), calc(50% + 50% * cos(249.23deg)) calc(50% + 50% * sin(249.23deg)));
+  background-color: black;
+  width: 100%;
+  height: 100%;
+} 
+
+.span10 {
+  clip-path: polygon(50% 50%, calc(48% + 50% * cos(249.23deg)) calc(45% + 50% * sin(249.23deg)), calc(50% + 50% * cos(276.92deg)) calc(50% + 50% * sin(276.92deg)));
+  background-color: red;
+  width: 100%;
+  height: 100%;
+} 
+
+.span11 {
+  clip-path: polygon(50% 50%, calc(51% + 50% * cos(276.92deg)) calc(42% + 50% * sin(276.92deg)), calc(50% + 50% * cos(304.62deg)) calc(50% + 50% * sin(304.62deg)));
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.span12 {
+  clip-path: polygon(50% 50%, calc(56% + 50%* cos(332.31deg)) calc(47% + 50%* sin(332.31deg)), calc(50% + 50%* cos(304.62deg)) calc(50% + 50%* sin(304.62deg)));
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}
+
+.span13 {
+  clip-path: polygon(50% 50%, calc(56% + 50%* cos(332.31deg)) calc(47% + 50%* sin(332.31deg)), calc(50% + 50%* cos(360deg)) calc(50% + 50%* sin(360deg)));
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.rouletteSpanNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+}
+
+span p{
+  width: 65px;
+  height: 65px;
+  font-size: 60px;
+  text-align: center;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+.span1 p{transform: rotate(283.9deg) translate(0, 280%)}
+.span2 p {transform: rotate(311.59deg) translate(0, 280%)}
+.span3 p {transform: rotate(339.3deg) translate(0, 280%)}
+.span4 p {transform: rotate(7deg) translate(0, 280%)}
+.span5 p {transform: rotate(34.7deg) translate(0, 280%)}
+.span6 p {transform: rotate(62.38deg) translate(0, 280%)}
+.span7 p {transform: rotate(90.07deg) translate(0, 280%)}
+.span8 p {transform: rotate(117.8deg) translate(0, 280%)}
+.span9 p {transform: rotate(145.5deg) translate(0, 280%)}
+.span10 p {transform: rotate(173.14deg) translate(0, 280%)}
+.span11 p {transform: rotate(200.83deg) translate(0, 280%)}
+.span12 p {transform: rotate(228.5deg) translate(0, 280%)}
+.span13 p { transform: rotate(256.21deg) translate(0, 280%)}
+
+.spin {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: black;
+  color: #fff;
+  box-shadow: 0 5px 20px #000;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+@keyframes pulse {
+  0% {
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  transform: scale3d(1.09, 1.09, 1.09);
+  }
+  100% {
+  transform: scale3d(1, 1, 1);
+  }
+} 
+.spin:active {
+  width: 70px;
+  height: 70px;
+  font-size: 20px;
+  background: #ffe605;
+}
+
+.chipOptions {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.chipHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  aspect-ratio: 1 / 1;
+}
+
+.buttonReset {
+  all: unset;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.maxResolution {
+  width: 100%;
+  height: 100%;
+}
+
+.rouletteChips {
+  display: flex;
+  height: 60%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 6px solid;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  box-shadow: -2px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.oneChip {
+  border-color: orange;
+}
+
+.fiveChip {
+  border-color: blue;
+}
+
+.tenChip {
+  border-color: green;
+}
+
+.hundredChip {
+  border-color: yellow;
+}
+
+.tableRow1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tableRow2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.IntroducionSpeech {
+  width: 100%;
+  background-color: #1a1919;
+  white-space: pre-line;
+}
+
+.IntroducionSpeech p {
+  margin: 10px;
+}
