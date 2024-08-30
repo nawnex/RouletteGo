@@ -55,24 +55,34 @@ async function betComplete() {
 }
 
 function casinoStaff(payout, finalResult, balanceRemove) {
-  if (balance > 50) {
-    addMessage('keep an eye on this new player will ya?')
-  } else if (balance > 100) {
-    addMessage("I'm sure he didn't arrive with 100 credits")
-  } else if (balance > 250) {
-    addMessage("Ok Sir please play within the rules.\n you have to respect our rules")
-  } else if (balance > 500) {
-    addMessage("500?!?\n you arrived with 25 credits where did all this come from?")
-  } else if (balance > 1000) {
-    addMessage("Ok I hold my arms high with a white flag!\n you've won! I'm going out of bussiness thanks to you")
+  if (balance > 50 && staffMessages[0]) {
+    addMessage(staffMessages[0])
+    delete staffMessages[0]
+  } else if (balance >= 100 && balance < 200 && staffMessages[1]) {
+    addMessage(staffMessages[1])
+    delete staffMessages[1]
+  } else if (balance >= 250 && staffMessages[2]) {
+    addMessage(staffMessages[2])
+    delete staffMessages[2]
+  } else if (balance >= 500 && staffMessages[3]) {
+    addMessage(staffMessages[3])
+    delete staffMessages[3]
+  } else if (balance >= 700 && staffMessages[4]) {
+    addMessage(staffMessages[4])
+    delete staffMessages[4]
+  } else if (balance >= 1000 && staffMessages[7]) {
+    addMessage(staffMessages[7])
+    delete staffMessages[7]
   }
 
-  if (payout > 0 && finalResult === 0) {
-    addMessage("great job! you got it correct!\n now where are your magnets you're hiding?")
+  if (payout > 0 && finalResult === 0 && staffMessages[5]) {
+    addMessage(staffMessages[5])
+    delete staffMessages[5]
   }
 
-  if (balanceRemove > 50) {
-    addMessage("I'm sure you can't keep betting this big\n your luck must run out some time soon")
+  if (balanceRemove > 50 && staffMessages[6]) {
+    addMessage(staffMessages[6])
+    delete staffMessages[6]
   }
 }
 
@@ -198,7 +208,7 @@ function depositingPayment(payout, finalResult, betAmount) {
   document.getElementById('balance').innerHTML = balance
   newBetSet = true;
   multiplierChanges = 7;
-  setProgress(0);
+  multiplierPipe()
   tableOpen = true;
 }
 
@@ -416,3 +426,14 @@ let numTableRelation = [
   [11, 14, 23, 18, 16],
   [12, 13, 23, 19, 16],
 ]
+
+staffMessages = {
+  0:"keep an eye on this new player will ya?",
+  1:"I'm sure he didn't arrive with 100 credits",
+  2:"Ok Sir please play within the rules.\n you have to respect our rules",
+  3:"How?!?\n you arrived with 25 credits where did all this come from?",
+  4:"Ok I hold my arms high with a white flag!\n you're gonna win soon. I'm going out of business thanks to you",
+  5:"great job! you got it correct!\n now where are your magnets you're hiding?",
+  6:"I'm sure you can't keep betting this big\n your luck must run out some time soon",
+  7:"CONGRATS\nCONGRATS\nYou've beat us at our own game, we give up on you!"
+}
